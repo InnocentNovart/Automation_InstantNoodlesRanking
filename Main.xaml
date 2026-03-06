@@ -1,0 +1,807 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1628,15585.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uasb="clr-namespace:UiPath.Activities.System.Binding;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ueabc="clr-namespace:UiPath.Excel.Activities.Business.ChartModifications;assembly=UiPath.Excel.Activities" xmlns:ueabf="clr-namespace:UiPath.Excel.Activities.Business.Filter;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="58">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Activities.System.Binding</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Presentations</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Presentations</AssemblyReference>
+      <AssemblyReference>UiPath.Presentations.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="1638.4,15520.8" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+    <ueab:SequenceX.Variables>
+      <Variable x:TypeArguments="ue:IWorkbookQuickHandle" Default="[new WorkbookQuickHandle(workbookPath:=&quot;Project_Notebook.xlsx&quot;,visible:=True,autoSave:=False,createNew:=True,readOnly:=False,isWorkspace:=True)]" Name="Notes" />
+      <Variable x:TypeArguments="uasb:BindingsRepository" Default="[new UiPath.Activities.System.Binding.BindingsRepository()]" Name="Saved" />
+    </ueab:SequenceX.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Step 1: Get dataset from website and interact with users" sap:VirtualizedContainerService.HintSize="1576,1726.4" sap2010:WorkflowViewState.IdRef="Sequence_58">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="459.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[string.Format(&quot;Hi, it's me Winnie. Today let me give you all a tour of the Instant Noodle Demand Rankings hehe.&quot;)]" />
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="459.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[string.Format(&quot;First of all, I'm going to extract dataset from World Instant Noodles Association website.&quot;)]" />
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: World Instant Noodles Association." sap:VirtualizedContainerService.HintSize="459.2,1382.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="18937ecb-dca3-4787-a127-eb461b01dfcb" Version="V1">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="425.6,1165.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="384,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+              <uix:NClick ClickType="Single" DisplayName="Click 'A'" sap:VirtualizedContainerService.HintSize="384,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="18937ecb-dca3-4787-a127-eb461b01dfcb" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://instantnoodles.org/en/" DesignTimeRectangle="1835, 146, 45, 26" FriendlyName="'A'" FullSelectorArgument="&lt;webctrl aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' tag='A' type='' /&gt;" Guid="e8238eb1-de3c-4cba-a208-913c982a54dd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAAeCAYAAACFZvb/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABpSURBVFhH7dXBCUAhDARR++/QaqKQo1PAjuTDgzCnvyfX/eoDGG0w2vRR22dGpHhGyGG0wWiD0QajDUYbjDYYbTDa9EEvYroZkeIZIYfRBqMNRhuMNhhtMNpgtMFo0we9iOlmRIr+91UHfLGjc0Irrq8AAAAASUVORK5CYII=" InformativeScreenshot="3b2bee69fb6e68f251505945030a50d4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='World Instant Noodles Association.' /&gt;" SearchSteps="FuzzySelector, Image" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Demand Rankings'" sap:VirtualizedContainerService.HintSize="384,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="18937ecb-dca3-4787-a127-eb461b01dfcb" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://instantnoodles.org/en/" DesignTimeRectangle="573, 411, 116, 22" ElementType="Text" FriendlyName="'Demand Rankings'" FullSelectorArgument="&lt;webctrl aaname='Demand Rankings' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Demand Rankings' tag='A' type='' check:text='Demand Rankings' /&gt;" Guid="d8526bed-ead4-487e-83bb-a798019e4e40" ImageBase64="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" InformativeScreenshot="ac4a33d141efe62958c896588e86c2c7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='World Instant Noodles Association.' /&gt;" SearchSteps="FuzzySelector, Image">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="532, 379, 273, 140" ElementType="ListItem" FriendlyName="'Global Demand'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li' idx='6' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' tag='LI' check:text='Global Demand for Instant Noodles&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Demand Rankings&amp;#xD;&amp;#xA;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Global Demand' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[Notes.Sheet(&quot;Ranking&quot;).DataTableOutValue]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Ranking'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='NumberColumnFormat' DecimalSeparator='.' ThousandsSeparator=',' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Country/Region' ReferenceIdx='1' Name='Country/Region'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='2018' ReferenceIdx='2' Name='2018'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='2019' ReferenceIdx='3' Name='2019'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='2020' ReferenceIdx='4' Name='2020'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='2021' ReferenceIdx='5' Name='2021'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='2022' ReferenceIdx='6' Name='2022'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='text' /&gt;&lt;column name='Country/Region' attr='text' /&gt;&lt;column name='2018' attr='text' /&gt;&lt;column name='2019' attr='text' /&gt;&lt;column name='2020' attr='text' /&gt;&lt;column name='2021' attr='text' /&gt;&lt;column name='2022' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="384,157.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="0" ScopeIdentifier="18937ecb-dca3-4787-a127-eb461b01dfcb" Version="V1">
+                <uix:NExtractData.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="551, 1052, 1457, 4310" FriendlyName="'Country/Region 2018'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="99abffe3-9e24-41fd-8517-1c1b02f408e9" InformativeScreenshot="5884344e19b94d67dadcd128b5bbb9c3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='World Instant Noodles Association.' /&gt;" SearchSteps="Selector" />
+                </uix:NExtractData.Target>
+              </uix:NExtractData>
+              <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="384,80.8" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="Demand Instant Noodles Ranking.xlsx">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:DeleteFileX>
+              <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="384,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Now I have the dataset hehe. Please let me know which TOP ranking you would like to explore?" OptionsString="Top 5;Top 10" Title="TOP Instant Noodles Demand Ranking">
+                <ui:InputDialog.Result>
+                  <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of UiPath.Excel.ExcelValue)("UserInput")]</OutArgument>
+                </ui:InputDialog.Result>
+              </ui:InputDialog>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="d5ddde52420c098b24a3d29643f9a244.png" Selector="&lt;html app='chrome.exe' title='World Instant Noodles Association.'/&gt;" Url="https://instantnoodles.org/en/" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="Organize data based on what top country that user chose" sap:VirtualizedContainerService.HintSize="1576,3872.8" sap2010:WorkflowViewState.IdRef="Sequence_59">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If Condition="[Saved.Values(Of UiPath.Excel.ExcelValue)(&quot;UserInput&quot;) = string.Format(&quot;Top 10&quot;)]" sap:VirtualizedContainerService.HintSize="1154.4,3780" sap2010:WorkflowViewState.IdRef="If_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="555.2,3620.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="513.6,3528" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" WorkbookPath="Demand Instant Noodles Ranking.xlsx">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Noodles_Ranking" />
+                  </ActivityAction.Argument>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,3258.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:WriteRangeX Destination="[Noodles_Ranking.Sheet(&quot;Ranking&quot;)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="438.4,160" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[Notes.Sheet(&quot;Ranking&quot;)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:WriteRangeX>
+                    <ueab:DuplicateSheetX DisplayName="Duplicate Sheet" sap:VirtualizedContainerService.HintSize="438.4,139.2" sap2010:WorkflowViewState.IdRef="DuplicateSheetX_1" NewSheetName="World Ranking" SheetToDuplicate="[Noodles_Ranking.Sheet(&quot;Ranking&quot;)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:DuplicateSheetX>
+                    <ueab:FilterX ClearFilter="False" ColumnName="Ranking" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="438.4,170.4" sap2010:WorkflowViewState.IdRef="FilterX_1" Range="[Noodles_Ranking.Sheet(&quot;Ranking&quot;)]">
+                      <ueab:FilterX.FilterArgument>
+                        <ueabf:FilterArgument Mode="Advanced">
+                          <ueabf:FilterArgument.AdvancedFiltersArgument>
+                            <ueabf:AdvancedFilterArgument LogicalOperator="And">
+                              <ueabf:AdvancedFilterArgument.Condition1>
+                                <ueabf:AdvancedFilterCondition Operator="LT" Value="11" />
+                              </ueabf:AdvancedFilterArgument.Condition1>
+                              <ueabf:AdvancedFilterArgument.Condition2>
+                                <ueabf:AdvancedFilterCondition Value="{x:Null}" Operator="NONE" />
+                              </ueabf:AdvancedFilterArgument.Condition2>
+                            </ueabf:AdvancedFilterArgument>
+                          </ueabf:FilterArgument.AdvancedFiltersArgument>
+                          <ueabf:FilterArgument.BasicFiltersArgument>
+                            <ueabf:BasicFilterArgument>
+                              <ueabf:BasicFilterArgument.BasicFilters>
+                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                                  <x:Null />
+                                </scg:List>
+                              </ueabf:BasicFilterArgument.BasicFilters>
+                            </ueabf:BasicFilterArgument>
+                          </ueabf:FilterArgument.BasicFiltersArgument>
+                        </ueabf:FilterArgument>
+                      </ueab:FilterX.FilterArgument>
+                    </ueab:FilterX>
+                    <ueab:FormatRangeX DisplayName="Format Cells" sap:VirtualizedContainerService.HintSize="438.4,139.2" sap2010:WorkflowViewState.IdRef="FormatRangeX_1" Range="[Noodles_Ranking.Sheet(&quot;Ranking&quot;).Range(&quot;C1:G1&quot;)]">
+                      <ueab:FormatRangeX.Alignment>
+                        <ui:AlignmentOptions HorizontalAlignment="xlHAlignGeneral" VerticalAlignment="xlVAlignBottom" WrapText="False" />
+                      </ueab:FormatRangeX.Alignment>
+                      <ueab:FormatRangeX.Font>
+                        <ui:FontOptions Color="Black" FillColor="Transparent" FontFamilyName="Calibri" Size="11" Style="Regular" />
+                      </ueab:FormatRangeX.Font>
+                      <ueab:FormatRangeX.Format>
+                        <ueab:NumberFormat DecimalPlaces="0" UseThousandSeparator="False" />
+                      </ueab:FormatRangeX.Format>
+                    </ueab:FormatRangeX>
+                    <ueab:CreatePivotTableX DestinationRange="[Noodles_Ranking.Sheet(&quot;Data TOP Pivot Table&quot;).Range(&quot;A1&quot;)]" DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="438.4,904.8" sap2010:WorkflowViewState.IdRef="CreatePivotTableX_2" Range="[Noodles_Ranking.Sheet(&quot;Ranking&quot;).Range(&quot;A1:G11&quot;)]" TableName="Pivottable" ValuesMode="Columns">
+                      <ueab:CreatePivotTableX.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Country/Region" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_8" Type="Row" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2018" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_9" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2019" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_10" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2020" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_11" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2021" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_12" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2022" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_13" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Ranking" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_14" Type="Filter" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:CreatePivotTableX.Body>
+                    </ueab:CreatePivotTableX>
+                    <ueab:CopyPasteRangeX DestinationRange="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;)]" DisplayName="Copy/Paste Range" sap:VirtualizedContainerService.HintSize="438.4,213.6" sap2010:WorkflowViewState.IdRef="CopyPasteRangeX_4" PasteOptions="Values" SourceRange="[Noodles_Ranking.Sheet(&quot;Data TOP Pivot Table&quot;).Range(&quot;A3:F13&quot;)]" Transpose="False" />
+                    <ueab:CreateTableX TableName="{x:Null}" DisplayName="Format as Table" HasHeaders="True" sap:VirtualizedContainerService.HintSize="438.4,213.6" sap2010:WorkflowViewState.IdRef="CreateTableX_1" OutTableName="[Saved.Values(Of System.String)(&quot;DataTOPandChart&quot;)]" Range="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;)]" />
+                    <ueab:SortX DisplayName="Sort Range" HasHeaders="True" sap:VirtualizedContainerService.HintSize="438.4,212.8" sap2010:WorkflowViewState.IdRef="SortX_2" Range="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;)]">
+                      <ueab:SortX.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:SortColumnX ColumnName="Sum of 2022" DisplayName="Sort By Column" sap:VirtualizedContainerService.HintSize="382.4,62.4" sap2010:WorkflowViewState.IdRef="SortColumnX_2" SortDirection="Descending" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:SortX.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:SortX>
+                    <ueab:InsertExcelChartX ChartCategory="Column" ChartHeight="400" ChartType="xlColumnClustered" ChartWidth="550" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="438.4,236.8" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_1" InsertIntoSheet="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;)]" InsertedChart="[Saved.Values(Of UiPath.Excel.IChartRef)(&quot;Top_Chart&quot;)]" Left="150" Range="[Noodles_Ranking.Table(&quot;Table1&quot;)]" Top="50">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:InsertExcelChartX>
+                    <ueab:UpdateChartX Chart="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;).Chart(&quot;Chart 1&quot;)]" DisplayName="Update Chart" sap:VirtualizedContainerService.HintSize="438.4,236" sap2010:WorkflowViewState.IdRef="UpdateChartX_2">
+                      <ueab:UpdateChartX.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueabc:ModifyChartTitleModification Title="{x:Null}" DisplayName="Modify Chart Title" sap:VirtualizedContainerService.HintSize="387.2,80.8" sap2010:WorkflowViewState.IdRef="ModifyChartTitleModification_2" ShowTitle="False" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:UpdateChartX.Body>
+                    </ueab:UpdateChartX>
+                    <ueab:CopyChartToClipboardX Action="SaveAsPicture" Chart="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;).Chart(&quot;Chart 1&quot;)]" DisplayName="Get Chart" FilePath="[string.Format(&quot;chart_{0}&quot;, Saved.Values(Of UiPath.Excel.ExcelValue)(&quot;UserInput&quot;))]" sap:VirtualizedContainerService.HintSize="438.4,139.2" sap2010:WorkflowViewState.IdRef="CopyChartToClipboardX_1" ReplaceFile="True" />
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap:VirtualizedContainerService.HintSize="555.2,3620.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="513.6,3528" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_9" WorkbookPath="Demand Instant Noodles Ranking.xlsx">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Noodles_Ranking" />
+                  </ActivityAction.Argument>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,3258.4" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:WriteRangeX Destination="[Noodles_Ranking.Sheet(&quot;Ranking&quot;)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="438.4,160" sap2010:WorkflowViewState.IdRef="WriteRangeX_6" IgnoreEmptySource="False" Source="[Notes.Sheet(&quot;Ranking&quot;)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:WriteRangeX>
+                    <ueab:DuplicateSheetX DisplayName="Duplicate Sheet" sap:VirtualizedContainerService.HintSize="438.4,139.2" sap2010:WorkflowViewState.IdRef="DuplicateSheetX_4" NewSheetName="World Ranking" SheetToDuplicate="[Noodles_Ranking.Sheet(&quot;Ranking&quot;)]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:DuplicateSheetX>
+                    <ueab:FilterX ClearFilter="False" ColumnName="Ranking" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="438.4,170.4" sap2010:WorkflowViewState.IdRef="FilterX_5" Range="[Noodles_Ranking.Sheet(&quot;Ranking&quot;)]">
+                      <ueab:FilterX.FilterArgument>
+                        <ueabf:FilterArgument Mode="Advanced">
+                          <ueabf:FilterArgument.AdvancedFiltersArgument>
+                            <ueabf:AdvancedFilterArgument LogicalOperator="And">
+                              <ueabf:AdvancedFilterArgument.Condition1>
+                                <ueabf:AdvancedFilterCondition Operator="LT" Value="6" />
+                              </ueabf:AdvancedFilterArgument.Condition1>
+                              <ueabf:AdvancedFilterArgument.Condition2>
+                                <ueabf:AdvancedFilterCondition Value="{x:Null}" Operator="NONE" />
+                              </ueabf:AdvancedFilterArgument.Condition2>
+                            </ueabf:AdvancedFilterArgument>
+                          </ueabf:FilterArgument.AdvancedFiltersArgument>
+                          <ueabf:FilterArgument.BasicFiltersArgument>
+                            <ueabf:BasicFilterArgument>
+                              <ueabf:BasicFilterArgument.BasicFilters>
+                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                                  <x:Null />
+                                </scg:List>
+                              </ueabf:BasicFilterArgument.BasicFilters>
+                            </ueabf:BasicFilterArgument>
+                          </ueabf:FilterArgument.BasicFiltersArgument>
+                        </ueabf:FilterArgument>
+                      </ueab:FilterX.FilterArgument>
+                    </ueab:FilterX>
+                    <ueab:FormatRangeX DisplayName="Format Cells" sap:VirtualizedContainerService.HintSize="438.4,139.2" sap2010:WorkflowViewState.IdRef="FormatRangeX_5" Range="[Noodles_Ranking.Sheet(&quot;Ranking&quot;).Range(&quot;C1:G1&quot;)]">
+                      <ueab:FormatRangeX.Alignment>
+                        <ui:AlignmentOptions HorizontalAlignment="xlHAlignGeneral" VerticalAlignment="xlVAlignBottom" WrapText="False" />
+                      </ueab:FormatRangeX.Alignment>
+                      <ueab:FormatRangeX.Font>
+                        <ui:FontOptions Color="Black" FillColor="Transparent" FontFamilyName="Calibri" Size="11" Style="Regular" />
+                      </ueab:FormatRangeX.Font>
+                      <ueab:FormatRangeX.Format>
+                        <ueab:NumberFormat DecimalPlaces="0" UseThousandSeparator="False" />
+                      </ueab:FormatRangeX.Format>
+                    </ueab:FormatRangeX>
+                    <ueab:CreatePivotTableX DestinationRange="[Noodles_Ranking.Sheet(&quot;Data TOP Pivot Table&quot;).Range(&quot;A1&quot;)]" DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="438.4,904.8" sap2010:WorkflowViewState.IdRef="CreatePivotTableX_6" Range="[Noodles_Ranking.Sheet(&quot;Ranking&quot;).Range(&quot;A1:G6&quot;)]" TableName="Pivottable" ValuesMode="Columns">
+                      <ueab:CreatePivotTableX.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Country/Region" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_35" Type="Row" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2018" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_36" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2019" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_37" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2020" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_38" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2021" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_39" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2022" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_40" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Ranking" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_41" Type="Filter" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:CreatePivotTableX.Body>
+                    </ueab:CreatePivotTableX>
+                    <ueab:CopyPasteRangeX DestinationRange="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;)]" DisplayName="Copy/Paste Range" sap:VirtualizedContainerService.HintSize="438.4,213.6" sap2010:WorkflowViewState.IdRef="CopyPasteRangeX_6" PasteOptions="Values" SourceRange="[Noodles_Ranking.Sheet(&quot;Data TOP Pivot Table&quot;).Range(&quot;A3:F8&quot;)]" Transpose="False" />
+                    <ueab:CreateTableX TableName="{x:Null}" DisplayName="Format as Table" HasHeaders="True" sap:VirtualizedContainerService.HintSize="438.4,213.6" sap2010:WorkflowViewState.IdRef="CreateTableX_3" OutTableName="[Saved.Values(Of System.String)(&quot;DataTOPandChart&quot;)]" Range="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;)]" />
+                    <ueab:SortX DisplayName="Sort Range" HasHeaders="True" sap:VirtualizedContainerService.HintSize="438.4,212.8" sap2010:WorkflowViewState.IdRef="SortX_4" Range="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;)]">
+                      <ueab:SortX.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:SortColumnX ColumnName="Sum of 2022" DisplayName="Sort By Column" sap:VirtualizedContainerService.HintSize="382.4,62.4" sap2010:WorkflowViewState.IdRef="SortColumnX_4" SortDirection="Descending" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:SortX.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:SortX>
+                    <ueab:InsertExcelChartX ChartCategory="Column" ChartHeight="400" ChartType="xlColumnClustered" ChartWidth="550" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="438.4,236.8" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_6" InsertIntoSheet="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;)]" InsertedChart="[Saved.Values(Of UiPath.Excel.IChartRef)(&quot;Top_Chart&quot;)]" Left="150" Range="[Noodles_Ranking.Table(&quot;Table1&quot;)]" Top="50">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:InsertExcelChartX>
+                    <ueab:UpdateChartX Chart="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;).Chart(&quot;Chart 1&quot;)]" DisplayName="Update Chart" sap:VirtualizedContainerService.HintSize="438.4,236" sap2010:WorkflowViewState.IdRef="UpdateChartX_3">
+                      <ueab:UpdateChartX.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueabc:ModifyChartTitleModification Title="{x:Null}" DisplayName="Modify Chart Title" sap:VirtualizedContainerService.HintSize="387.2,80.8" sap2010:WorkflowViewState.IdRef="ModifyChartTitleModification_3" ShowTitle="False" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:UpdateChartX.Body>
+                    </ueab:UpdateChartX>
+                    <ueab:CopyChartToClipboardX Action="SaveAsPicture" Chart="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;).Chart(&quot;Chart 1&quot;)]" DisplayName="Get Chart" FilePath="[string.Format(&quot;chart_{0}&quot;, Saved.Values(Of UiPath.Excel.ExcelValue)(&quot;UserInput&quot;))]" sap:VirtualizedContainerService.HintSize="438.4,139.2" sap2010:WorkflowViewState.IdRef="CopyChartToClipboardX_8" ReplaceFile="True">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:CopyChartToClipboardX>
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence DisplayName="Organize data based on which country that user chose" sap:VirtualizedContainerService.HintSize="1576,9728" sap2010:WorkflowViewState.IdRef="Sequence_60">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="1534.4,9635.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" WorkbookPath="Demand Instant Noodles Ranking.xlsx">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+            </ActivityAction.Argument>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1500.8,9365.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="1459.2,80.8" sap2010:WorkflowViewState.IdRef="DeleteFileX_3" Path="Output\Final Instant Noodles Demand Ranking Report.pptx" />
+              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[string.Format(&quot;{0}\Output&quot;, System.IO.Directory.GetCurrentDirectory())]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="1459.2,160" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="Demand Instant Noodles Ranking Report Template.pptx">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CopyFile>
+              <ui:RenameFileX DisplayName="Rename File" FilePath="Output\Demand Instant Noodles Ranking Report Template.pptx" sap:VirtualizedContainerService.HintSize="1459.2,144" sap2010:WorkflowViewState.IdRef="RenameFileX_1" KeepExtension="True" NewName="Final Instant Noodles Demand Ranking Report.pptx">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:RenameFileX>
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1459.2,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Are you interested in knowing how your country ranks? Easy piecey, type the name of your country here." Title="Choose your country">
+                <ui:InputDialog.Result>
+                  <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of UiPath.Excel.ExcelValue)("UserCountry_Input")]</OutArgument>
+                </ui:InputDialog.Result>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InputDialog>
+              <ueab:CopyPasteRangeX DestinationRange="[Excel.Sheet(&quot;World Ranking&quot;).Range(&quot;H:H&quot;)]" DisplayName="Copy/Paste Range" sap:VirtualizedContainerService.HintSize="1459.2,213.6" sap2010:WorkflowViewState.IdRef="CopyPasteRangeX_3" PasteOptions="All" SourceRange="[Excel.Sheet(&quot;World Ranking&quot;).Range(&quot;A:A&quot;)]" Transpose="False">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ueab:CopyPasteRangeX>
+              <ueab:DeleteColumnX ColumnName="Ranking" DisplayName="Delete Column" HasHeaders="True" sap:VirtualizedContainerService.HintSize="1459.2,161.6" sap2010:WorkflowViewState.IdRef="DeleteColumnX_1" Range="[Excel.Sheet(&quot;World Ranking&quot;)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ueab:DeleteColumnX>
+              <ueab:CopyPasteRangeX DestinationRange="[Excel.Sheet(&quot;Data COUNTRY and Chart&quot;)]" DisplayName="Copy/Paste Range" sap:VirtualizedContainerService.HintSize="1459.2,213.6" sap2010:WorkflowViewState.IdRef="CopyPasteRangeX_2" PasteOptions="All" SourceRange="[Excel.Sheet(&quot;World Ranking&quot;).Range(&quot;A1:G1&quot;)]" Transpose="False">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ueab:CopyPasteRangeX>
+              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Data COUNTRY and Chart&quot;).Cell(&quot;A2&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1459.2,160" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[Saved.Values(Of UiPath.Excel.ExcelValue)(&quot;UserCountry_Input&quot;)]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ueab:WriteCellX>
+              <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="1459.2,2144" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_2" Range="[Excel.Sheet(&quot;Data COUNTRY and Chart&quot;)]" SaveAfterEachRow="False">
+                <ueab:ExcelForEachRowX.Body>
+                  <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                    <ActivityAction.Argument1>
+                      <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                    </ActivityAction.Argument1>
+                    <ActivityAction.Argument2>
+                      <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                    </ActivityAction.Argument2>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="516.8,1960" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Group VLookup" sap:VirtualizedContainerService.HintSize="475.2,1867.2" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ueab:VLookupX ColumnIndex="2" DisplayName="VLookup" ExactMatch="True" sap:VirtualizedContainerService.HintSize="433.6,262.4" sap2010:WorkflowViewState.IdRef="VLookupX_5" Label="[CurrentRow.ByField(&quot;Country/Region&quot;)]" SourceRange="[Excel.Sheet(&quot;World Ranking&quot;)]">
+                          <ueab:VLookupX.Value>
+                            <OutArgument x:TypeArguments="ue:ExcelValue">[CurrentRow.ByField("2018")]</OutArgument>
+                          </ueab:VLookupX.Value>
+                        </ueab:VLookupX>
+                        <ueab:VLookupX ColumnIndex="3" DisplayName="VLookup" ExactMatch="True" sap:VirtualizedContainerService.HintSize="433.6,262.4" sap2010:WorkflowViewState.IdRef="VLookupX_6" Label="[CurrentRow.ByField(&quot;Country/Region&quot;)]" SourceRange="[Excel.Sheet(&quot;World Ranking&quot;)]">
+                          <ueab:VLookupX.Value>
+                            <OutArgument x:TypeArguments="ue:ExcelValue">[CurrentRow.ByField("2019")]</OutArgument>
+                          </ueab:VLookupX.Value>
+                        </ueab:VLookupX>
+                        <ueab:VLookupX ColumnIndex="4" DisplayName="VLookup" ExactMatch="True" sap:VirtualizedContainerService.HintSize="433.6,262.4" sap2010:WorkflowViewState.IdRef="VLookupX_7" Label="[CurrentRow.ByField(&quot;Country/Region&quot;)]" SourceRange="[Excel.Sheet(&quot;World Ranking&quot;)]">
+                          <ueab:VLookupX.Value>
+                            <OutArgument x:TypeArguments="ue:ExcelValue">[CurrentRow.ByField("2020")]</OutArgument>
+                          </ueab:VLookupX.Value>
+                        </ueab:VLookupX>
+                        <ueab:VLookupX ColumnIndex="5" DisplayName="VLookup" ExactMatch="True" sap:VirtualizedContainerService.HintSize="433.6,262.4" sap2010:WorkflowViewState.IdRef="VLookupX_8" Label="[CurrentRow.ByField(&quot;Country/Region&quot;)]" SourceRange="[Excel.Sheet(&quot;World Ranking&quot;)]">
+                          <ueab:VLookupX.Value>
+                            <OutArgument x:TypeArguments="ue:ExcelValue">[CurrentRow.ByField("2021")]</OutArgument>
+                          </ueab:VLookupX.Value>
+                        </ueab:VLookupX>
+                        <ueab:VLookupX ColumnIndex="6" DisplayName="VLookup" ExactMatch="True" sap:VirtualizedContainerService.HintSize="433.6,262.4" sap2010:WorkflowViewState.IdRef="VLookupX_9" Label="[CurrentRow.ByField(&quot;Country/Region&quot;)]" SourceRange="[Excel.Sheet(&quot;World Ranking&quot;)]">
+                          <ueab:VLookupX.Value>
+                            <OutArgument x:TypeArguments="ue:ExcelValue">[CurrentRow.ByField("2022")]</OutArgument>
+                          </ueab:VLookupX.Value>
+                        </ueab:VLookupX>
+                        <ueab:VLookupX ColumnIndex="7" DisplayName="VLookup" ExactMatch="True" sap:VirtualizedContainerService.HintSize="433.6,262.4" sap2010:WorkflowViewState.IdRef="VLookupX_10" Label="[CurrentRow.ByField(&quot;Country/Region&quot;)]" SourceRange="[Excel.Sheet(&quot;World Ranking&quot;)]">
+                          <ueab:VLookupX.Value>
+                            <OutArgument x:TypeArguments="ue:ExcelValue">[CurrentRow.ByField("Ranking")]</OutArgument>
+                          </ueab:VLookupX.Value>
+                        </ueab:VLookupX>
+                      </Sequence>
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelForEachRowX.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ueab:ExcelForEachRowX>
+              <If Condition="[string.IsNullOrEmpty(Excel.Sheet(&quot;Data COUNTRY and Chart&quot;).Cell(&quot;A2&quot;)) = true]" sap:VirtualizedContainerService.HintSize="1459.2,5269.6" sap2010:WorkflowViewState.IdRef="If_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="400,175.2" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="356.8,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[string.Format(&quot;Oops I'm sorry, your country is not included in the rankings list. &quot;)]" />
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="1036.8,5111.2" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="993.6,293.6" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Nice, your country is in the rankings list. Do you want to get the report in PDF file?" OptionsString="Yes;No" Title="Report File">
+                      <ui:InputDialog.Result>
+                        <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of UiPath.Excel.ExcelValue)("User_PDF")]</OutArgument>
+                      </ui:InputDialog.Result>
+                    </ui:InputDialog>
+                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="993.6,4686.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_6" WorkbookPath="Demand Instant Noodles Ranking.xlsx">
+                      <ueab:ExcelApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Noodles_Ranking" />
+                          </ActivityAction.Argument>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="981.6,4412" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:CreatePivotTableX DestinationRange="[Noodles_Ranking.Sheet(&quot;Data COUNTRY Pivot Table&quot;)]" DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="938.4,804.8" sap2010:WorkflowViewState.IdRef="CreatePivotTableX_4" Range="[Noodles_Ranking.Sheet(&quot;Data COUNTRY and Chart&quot;).Range(&quot;A1:F2&quot;)]" TableName="Pivottable" ValuesMode="Columns">
+                              <ueab:CreatePivotTableX.Body>
+                                <ActivityAction>
+                                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Country/Region" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,84" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_22" Type="Row" />
+                                    <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2018" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,84" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_23" Type="Value" />
+                                    <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2019" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,84" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_24" Type="Value" />
+                                    <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2020" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,84" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_25" Type="Value" />
+                                    <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2021" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,84" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_26" Type="Value" />
+                                    <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="2022" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,84" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_27" Type="Value" />
+                                  </Sequence>
+                                </ActivityAction>
+                              </ueab:CreatePivotTableX.Body>
+                            </ueab:CreatePivotTableX>
+                            <ueab:InsertExcelChartX ChartCategory="Column" ChartHeight="400" ChartType="xlColumnClustered" ChartWidth="550" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="938.4,235.2" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_4" InsertIntoSheet="[Noodles_Ranking.Sheet(&quot;Data COUNTRY and Chart&quot;)]" InsertedChart="[Saved.Values(Of UiPath.Excel.IChartRef)(&quot;Country_Chart&quot;)]" Left="150" Range="[Noodles_Ranking.Sheet(&quot;Data COUNTRY Pivot Table&quot;).Range(&quot;A1:F2&quot;)]" Top="50">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ueab:InsertExcelChartX>
+                            <ueab:UpdateChartX Chart="[Noodles_Ranking.Sheet(&quot;Data COUNTRY and Chart&quot;).Chart(&quot;Chart 1&quot;)]" DisplayName="Update Chart" sap:VirtualizedContainerService.HintSize="938.4,300" sap2010:WorkflowViewState.IdRef="UpdateChartX_1">
+                              <ueab:UpdateChartX.Body>
+                                <ActivityAction>
+                                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ueabc:ModifyChartTitleModification Title="{x:Null}" DisplayName="Modify Chart Title" sap:VirtualizedContainerService.HintSize="387.2,79.2" sap2010:WorkflowViewState.IdRef="ModifyChartTitleModification_1" ShowTitle="False" />
+                                    <ueabc:ShowHideDataLabelsModification DisplayName="Show/Hide Data Labels" sap:VirtualizedContainerService.HintSize="387.2,51.2" sap2010:WorkflowViewState.IdRef="ShowHideDataLabelsModification_1" ShowDataLabels="True" />
+                                  </Sequence>
+                                </ActivityAction>
+                              </ueab:UpdateChartX.Body>
+                            </ueab:UpdateChartX>
+                            <ueab:CopyChartToClipboardX Action="SaveAsPicture" Chart="[Noodles_Ranking.Sheet(&quot;Data COUNTRY and Chart&quot;).Chart(&quot;Chart 1&quot;)]" DisplayName="Get Chart" FilePath="[string.Format(&quot;chart_{0}&quot;, Saved.Values(Of UiPath.Excel.ExcelValue)(&quot;UserCountry_Input&quot;))]" sap:VirtualizedContainerService.HintSize="938.4,137.6" sap2010:WorkflowViewState.IdRef="CopyChartToClipboardX_5" ReplaceFile="True" />
+                            <ui:PowerPointApplicationScope Password="{x:Null}" CreateIfNotExists="True" DisplayName="Use PowerPoint Presentation" sap:VirtualizedContainerService.HintSize="938.4,2683.2" sap2010:WorkflowViewState.IdRef="PowerPointApplicationScope_2" PresentationPath="Output\Final Instant Noodles Demand Ranking Report.pptx" TemplatePath="Demand Instant Noodles Ranking Report Template.pptx" UseThemeFile="True">
+                              <ui:PowerPointApplicationScope.Body>
+                                <ActivityAction x:TypeArguments="ui:IPresentationQuickHandle">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="ui:IPresentationQuickHandle" Name="PowerPoint" />
+                                  </ActivityAction.Argument>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="926.4,2428" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:ReplaceShapeWithDataTable AppendMode="CreateNewTable" DisplayName="Add Data Table to Slide" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="883.2,308" sap2010:WorkflowViewState.IdRef="ReplaceShapeWithDataTable_2" Presentation="[PowerPoint]" ShapeName="Content Placeholder 2" SlideIndex="2" StartColumn="1" StartRow="0" TableToInsert="[Noodles_Ranking.Table(&quot;Table1&quot;)]">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:ReplaceShapeWithDataTable>
+                                    <ueab:CopyChartToClipboardX FilePath="{x:Null}" Action="CopyToClipboard" Chart="[Noodles_Ranking.Sheet(&quot;Data TOP and Chart&quot;).Chart(&quot;Chart 1&quot;)]" DisplayName="Get Chart" sap:VirtualizedContainerService.HintSize="883.2,88.8" sap2010:WorkflowViewState.IdRef="CopyChartToClipboardX_3" ReplaceFile="True" />
+                                    <ui:PasteIntoSlide Height="{x:Null}" Left="{x:Null}" Top="{x:Null}" Width="{x:Null}" DisplayName="Paste Item into Slide" sap:VirtualizedContainerService.HintSize="883.2,186.4" sap2010:WorkflowViewState.IdRef="PasteIntoSlide_1" Presentation="[PowerPoint]" ShapeName="Content Placeholder 3" SlideIndex="[3]" />
+                                    <ui:FindAndReplaceTextInPresentation NumberOfReplacements="{x:Null}" DisplayName="Replace Text in Presentation" sap:VirtualizedContainerService.HintSize="883.2,207.2" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextInPresentation_3" MatchCase="False" Presentation="[PowerPoint]" ReplaceAll="True" ReplaceWith="[Saved.Values(Of UiPath.Excel.ExcelValue)(&quot;UserInput&quot;)]" SearchFor="%[USER_INPUT]" WholeWordsOnly="False" />
+                                    <ui:FindAndReplaceTextInPresentation NumberOfReplacements="{x:Null}" DisplayName="Replace Text in Presentation" sap:VirtualizedContainerService.HintSize="883.2,207.2" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextInPresentation_2" MatchCase="False" Presentation="[PowerPoint]" ReplaceAll="True" ReplaceWith="[Noodles_Ranking.Sheet(&quot;Data COUNTRY and Chart&quot;).Cell(&quot;G2&quot;)]" SearchFor="%[Country_Ranking]" WholeWordsOnly="False" />
+                                    <ui:FindAndReplaceTextInPresentation NumberOfReplacements="{x:Null}" DisplayName="Replace Text in Presentation" sap:VirtualizedContainerService.HintSize="883.2,207.2" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextInPresentation_1" MatchCase="False" Presentation="[PowerPoint]" ReplaceAll="True" ReplaceWith="[Saved.Values(Of UiPath.Excel.ExcelValue)(&quot;UserCountry_Input&quot;)]" SearchFor="%[Country_Name]" WholeWordsOnly="False" />
+                                    <ueab:CopyChartToClipboardX FilePath="{x:Null}" Action="CopyToClipboard" Chart="[Noodles_Ranking.Sheet(&quot;Data COUNTRY and Chart&quot;).Chart(&quot;Chart 1&quot;)]" DisplayName="Get Chart" sap:VirtualizedContainerService.HintSize="883.2,88.8" sap2010:WorkflowViewState.IdRef="CopyChartToClipboardX_6" ReplaceFile="True" />
+                                    <ui:PasteIntoSlide Height="{x:Null}" Left="{x:Null}" Top="{x:Null}" Width="{x:Null}" DisplayName="Paste Item into Slide" sap:VirtualizedContainerService.HintSize="883.2,186.4" sap2010:WorkflowViewState.IdRef="PasteIntoSlide_2" Presentation="[PowerPoint]" ShapeName="Content Placeholder 5" SlideIndex="[4]" />
+                                    <If Condition="[Saved.Values(Of UiPath.Excel.ExcelValue)(&quot;User_PDF&quot;) = string.Format(&quot;Yes&quot;)]" sap:VirtualizedContainerService.HintSize="883.2,536.8" sap2010:WorkflowViewState.IdRef="If_3">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="455.2,378.4" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="412,84" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[string.Format(&quot;Niceee, you now can read the report in both Power Point and PDF file. You can check Excel file for more details.&quot;)]" />
+                                          <ui:SavePresentationAsPdf DisplayName="Save Presentation as PDF" sap:VirtualizedContainerService.HintSize="412,163.2" sap2010:WorkflowViewState.IdRef="SavePresentationAsPdf_1" PdfPath="Output\Final Instant Noodles Demand Ranking Report.pdf" Presentation="[PowerPoint]" />
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="405.6,294.4" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="362.4,84" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[string.Format(&quot;It's oki, you still can read the report in Power Point file. You can check Excel file for more details.&quot;)]" />
+                                          <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="362.4,79.2" sap2010:WorkflowViewState.IdRef="DeleteFileX_4" Path="Output\Final Instant Noodles Demand Ranking Report.pdf" />
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:PowerPointApplicationScope.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:PowerPointApplicationScope>
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelApplicationCard.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:ExcelApplicationCard>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1459.2,84" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[string.Format(&quot;This is the very last line of my project! Thank you all for your attention. &quot;)]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ueab:ExcelApplicationCard>
+    </Sequence>
+  </ueab:SequenceX>
+</Activity>
